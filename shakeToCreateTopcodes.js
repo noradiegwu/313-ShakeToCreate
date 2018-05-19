@@ -70,11 +70,3 @@
 
  /*
  // // // TODO:  figure out solids...
- // // return intensity of shaking
- // */
- // function shakeIngredient(topcode)
- // { /////// may be incredibly difficult to track fast shaking ////////
- //   var intensity = 0;
- //   return speed; // in terms of speed (distance covered in a ms)?
- //   // some decimal (shake every 0.5 or 0.3 or 1 etc. sec)
- // }
