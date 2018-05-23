@@ -1,0 +1,49 @@
+html {
+	font-family: 'Gothic A1', sans-serif;
+}
+
+p {
+	text-align: center;
+	font-size: 40px;
+	margin-top: 5%;
+}
+
+.shake-vertical {
+	/*margin-right: 20%;*/
+	position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 500px;
+    height: 400px;
+}
+
+img {
+	height: 500px;
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+
+button {
+	margin-top: 35%;
+	margin-right: 5%;
+	text-align: center;
+	font-size: 30px;
+	border-radius: 28px;
+	padding: 10px 20px 10px 20px;
+	color: black;
+	background-color: white;
+	border-color:black;
+	text-decoration: none;
+	float: right;
+}
+
+button:hover {
+	background-color: black;
+	color: white;
+}

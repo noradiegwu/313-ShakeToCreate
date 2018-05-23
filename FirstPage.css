@@ -1,0 +1,47 @@
+html {
+	background-color: white;
+	font-family: 'Gothic A1', sans-serif;
+}
+
+.shake {
+	margin-top: -90px;
+	margin-left: auto;
+	display: inline;
+	float: right;
+	margin-right: 70px;
+}
+
+.shaker {
+	height: 80%;
+	width: 80%;
+}
+
+h1 {
+	margin-top: 190px;
+	margin-left: 90px;
+	font-size: 45px;
+	text-align: left;
+}
+h2 {
+	margin-left: 90px;
+	line-height: 40px;
+	text-align: left;
+}
+
+button {
+	margin-top: 30px;
+	text-align: center;
+	margin-left: 350px;
+	font-size: 27px;
+	border-radius: 28px;
+	padding: 10px 20px 10px 20px;
+	color: black;
+	background-color: white;
+	border-color:black;
+	text-decoration: none;
+}
+
+button:hover {
+	background-color: black;
+	color: white;
+}
