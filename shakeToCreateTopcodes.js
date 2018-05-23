@@ -18,11 +18,9 @@
 
    // obtain a drawing context from the <canvas>
    var ctx = document.querySelector("#video-canvas").getContext('2d');
-   if (topcodes[0]) { // rye whiskey
+   if (topcodes[0]) {
        angle = topcodes[0].angle;
        pourIngredient(topcodes[0]);
-       // console.log(angle); // check rotation --> (pourIngredient(topcode[i]))
-       // pourIngredient(topcodes[i]);
    }
  });
 
@@ -32,7 +30,7 @@
  // // TODO:  gather information about rotation
  // return intensity of pouring
  */
- function pourIngredient(topcode)
+ function pour_ingredient(topcode)
  {
    var angle = topcode.angle;
    var ingredient = '';
@@ -76,35 +74,17 @@
 
    if (ingredient_dictionary[ingredient] > 0 && angle > 3.4 && !done_pouring_flag){
      done_pouring_flag = true;
-     // console.log("*******flag?: " + done_pouring_flag)
      return;
-
    } else if (angle >= Math.PI && !done_pouring_flag){ // overshot and not done pouring --> do nothing
      angle = Math.PI;
-     // console.log("AAA: " + ingredient_dictionary[ingredient]);
-
    } else if (angle < Math.PI && angle >= (0.75 * Math.PI) && !done_pouring_flag && ingredient_dictionary[ingredient] < 1){
-     // between PI and 3/4 PI and not done pouring
      ingredient_dictionary[ingredient] = 1; // ounces
-     // console.log("BBB: " + ingredient_dictionary[ingredient]);
-
    } else if (angle < (0.75 * Math.PI) && angle >= (0.5 * Math.PI) && !done_pouring_flag && ingredient_dictionary[ingredient] < 2){
-     // between 3/4 PI and 1/2PI and not done pouring
      ingredient_dictionary[ingredient] = 2;
-     // console.log("CCC: " + ingredient_dictionary[ingredient]);
-
    } else if (angle < (0.5 * Math.PI) && !done_pouring_flag && ingredient_dictionary[ingredient] < 3){
-     // less than 1/2PI not done pouring
       ingredient_dictionary[ingredient] = 3;
-      // console.log("DDD: " + ingredient_dictionary[ingredient]);
-
    }
-
-   // console.log(angle);
-   // console.log(ingredient + ":  " + ingredient_dictionary[ingredient]);
    document.getElementById('ingredients').innerHTML = ingredient + ":  " + ingredient_dictionary[ingredient];
-   // console.log('FLAG:' + done_pouring_flag)
-
  }
 
  function done_pouring() {
@@ -113,12 +93,8 @@
      if (ingredient_dictionary[i] > 0) {
        var amount_of_ing = i + ":  " + ingredient_dictionary[i]
        display += amount_of_ing + '\n';
-       // console.log(i + ":  " + ingredient_dictionary[i]);
     }
    }
-   document.getElementById('ingredients').innerHTML = v;
+   document.getElementById('ingredients').innerHTML = display;
+   TopCodes.startStopVideoScan('video-canvas')
  }
-
-
-
- // // // TODO:  figure out solids...
