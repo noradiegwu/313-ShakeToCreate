@@ -1,6 +1,3 @@
- // TODO: check todos throughout file
-
- var done_pouring_flag = false; // not really using it rn, may not need it anymore
  var ingredient_dictionary = {'rye whiskey' : 0, 'london dry gin' : 0,
  'light rum': 0, 'sweet vermouth' : 0, 'dry vermouth' : 0, 'lemon juice' : 0,
  'lime juice' : 0, 'aromatic bitters' : 0, 'simple syrup' : 0}
@@ -20,7 +17,7 @@
    var ctx = document.querySelector("#video-canvas").getContext('2d');
    if (topcodes[0]) {
        angle = topcodes[0].angle;
-       pourIngredient(topcodes[0]);
+       pour_ingredient(topcodes[0]);
    }
  });
 
@@ -67,26 +64,19 @@
         ingredient = ''
    }
 
-   // reset amount poured each new inredient
-   if (ingredient_dictionary[ingredient] == 0) {
-     done_pouring_flag = false;
-   }
-
-   if (ingredient_dictionary[ingredient] > 0 && angle > 3.4 && !done_pouring_flag){
-     done_pouring_flag = true;
-     return;
-   } else if (angle >= Math.PI && !done_pouring_flag){ // overshot and not done pouring --> do nothing
+   if (angle >= Math.PI ){ // overshot and not done pouring --> do nothing
      angle = Math.PI;
-   } else if (angle < Math.PI && angle >= (0.75 * Math.PI) && !done_pouring_flag && ingredient_dictionary[ingredient] < 1){
+   } else if (angle < Math.PI && angle >= (0.75 * Math.PI) && ingredient_dictionary[ingredient] < 1){
      ingredient_dictionary[ingredient] = 1; // ounces
-   } else if (angle < (0.75 * Math.PI) && angle >= (0.5 * Math.PI) && !done_pouring_flag && ingredient_dictionary[ingredient] < 2){
+   } else if (angle < (0.75 * Math.PI) && angle >= (0.5 * Math.PI)  && ingredient_dictionary[ingredient] < 2){
      ingredient_dictionary[ingredient] = 2;
-   } else if (angle < (0.5 * Math.PI) && !done_pouring_flag && ingredient_dictionary[ingredient] < 3){
+   } else if (angle < (0.5 * Math.PI)  && ingredient_dictionary[ingredient] < 3){
       ingredient_dictionary[ingredient] = 3;
    }
    document.getElementById('ingredients').innerHTML = ingredient + ":  " + ingredient_dictionary[ingredient];
  }
 
+ // connects to stop button on html page
  function done_pouring() {
    var display = '';
    for (i in ingredient_dictionary) {
@@ -97,4 +87,5 @@
    }
    document.getElementById('ingredients').innerHTML = display;
    TopCodes.startStopVideoScan('video-canvas')
+   // pass ingredient_dictionary to graph
  }
