@@ -33,31 +33,31 @@
    var ingredient = '';
 
    switch (topcode.code) {
-     case 93:
+     case 61:
         ingredient = 'rye whiskey';
         break;
-     case 361:
+     case 87:
         ingredient = 'lemon juice';
         break;
-     case 313:
+     case 79:
         ingredient = 'sweet vermouth'
         break;
-     case 93:
+     case 91:
         ingredient = 'london dry gin';
         break;
-     case 361:
+     case 179:
         ingredient = 'light rum';
         break;
-     case 313:
+     case 121:
         ingredient = 'dry vermouth'
         break;
-     case 93:
+     case 143:
         ingredient = 'simple syrup';
         break;
-     case 361:
+     case 151:
         ingredient = 'lime juice';
         break;
-     case 313:
+     case 117:
         ingredient = 'aromatic bitters'
         break;
      default:
@@ -81,7 +81,7 @@
    var display = '';
    for (i in ingredient_dictionary) {
      if (ingredient_dictionary[i] > 0) {
-       var amount_of_ing = i + ":  " + ingredient_dictionary[i]
+       var amount_of_ing = i + ":  " + ingredient_dictionary[i];
        display += amount_of_ing + '\n';
     }
    }
