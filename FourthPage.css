@@ -44,8 +44,9 @@ html {
 }
 
 #retry {
-	margin-top: 1%;
-	margin-right: 5%;
+	margin-top: 50px;
+	margin-right: 85%;
+  margin-bottom: 50px;
 	text-align: center;
 	font-size: 30px;
 	border-radius: 28px;
