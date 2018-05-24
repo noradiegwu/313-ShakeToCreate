@@ -88,4 +88,5 @@
    document.getElementById('ingredients').innerHTML = display;
    TopCodes.startStopVideoScan('video-canvas')
    // pass ingredient_dictionary to graph
+   localStorage.setItem('myDrink', JSON.stringify(ingredient_dictionary))
  }
