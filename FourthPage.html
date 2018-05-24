@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shake-to-Create</title>
+  <link rel="stylesheet" type="text/css" href="FourthPage.css">
+  <link href="https://fonts.googleapis.com/css?family=Gothic+A1" rel="stylesheet">
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="http://code.highcharts.com/highcharts-more.js"></script>
+</head>
+
+<body onload = "plotDrink()">
+  <div id="timeline"></div>
+  <div id="container"></div>
+
+  <p>Compare this to classic cocktails:</p>
+
+  <div class="tab">
+    <button class="tablinks" onclick="openTab(event, 'Daiquiri')">Daiquiri</button>
+    <button class="tablinks" onclick="openTab(event, 'Manhattan')">Manhattan</button>
+    <button class="tablinks" onclick="openTab(event, 'Old Fashioned')">Old Fashioned</button>
+    <button class="tablinks" onclick="openTab(event, 'Whiskey Sour')">Whiskey Sour</button>
+    <button class="tablinks" onclick="openTab(event, 'Martini')">Martini</button>
+    <button class="tablinks" onclick="openTab(event, 'Whiskey Sour')">Fitzgerald</button>
+  </div>
+  </div>
+
+
+  <!-- Tab content -->
+  <div id="Daiquiri" class="tabcontent">
+    <h3>Daiquiri</h3>
+    <p>Daiquiri is a family of drinks that first became popular in the early 1900s. They generally consist of rum, lime juice, and a sweetener.</p>
+  </div>
+
+  <div id="Manhattan" class="tabcontent">
+    <h3>Manhattan</h3>
+    <p>The Manhattan is a cocktail first popularized in New York clubs in early 1870s. It traditionally is a stirred cocktail built with whiskey, sweet vermouth, and bitters.</p>
+  </div>
+
+
+  <div id="Old Fashioned" class="tabcontent">
+    <h3>Old Fashioned</h3>
+    <p>The Old Fashioned is a simple cocktail made by muddling sugar with alcohol and garnishing with a twist of expressed citrus peel.</p>
+  </div>
+
+  <div id="Whiskey Sour" class="tabcontent">
+    <h3>Whiskey Sour</h3>
+    <p>The Whiskey Sour is made with whiskey, lemon juice, sweetener, and traditionally shaken with an egg white.</p>
+  </div>
+
+
+  <div id="Martini" class="tabcontent">
+    <h3>Martini</h3>
+    <p>The Martini is a classic cocktail that is made with gin and dry vermouth garnished with an olive or lemon.</p>
+  </div>
+
+  <div id="Fitzgerald" class="tabcontent">
+    <h3>Fitzgerald</h3>
+    <p>The Fitzgerald is a variation on the Gin Sour that adds Angostura bitters. It's made with gin, lemon juice, simple syrup, and bitters.</p>
+  </div>
+
+  <a href="shakeToCreateTopcodes.html"><button id="retry"> New Drink </button></a>
+
+  <script src="radarChart.js"></script>
+</body>
+
+
+</html>
