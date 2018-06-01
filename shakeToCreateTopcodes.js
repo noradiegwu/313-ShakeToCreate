@@ -2,8 +2,6 @@
  'light rum': 0, 'sweet vermouth' : 0, 'dry vermouth' : 0, 'lemon juice' : 0,
  'lime juice' : 0, 'aromatic bitters' : 0, 'simple syrup' : 0}
 
-
-
  // register a callback function with the TopCode library
  TopCodes.setVideoFrameCallback("video-canvas", function (jsonString)
  {
@@ -21,12 +19,6 @@
    }
  });
 
-// TODO: HIDE VIDEO ON SCREEN
-
- /*
- // // TODO:  gather information about rotation
- // return intensity of pouring
- */
  function pour_ingredient(topcode)
  {
    var angle = topcode.angle;
@@ -73,7 +65,16 @@
    } else if (angle < (0.5 * Math.PI)  && ingredient_dictionary[ingredient] < 3){
       ingredient_dictionary[ingredient] = 3;
    }
-   document.getElementById('ingredients').innerHTML = ingredient + ":  " + ingredient_dictionary[ingredient];
+
+   var li_ids = ['rye', 'sweet', 'dry vermouth', 'london', 'rum', 'lemon', 'lime', 'syrup', 'bitters']
+
+   for(var i = 0; i < li_ids.length ; i++) {
+     console.log("here: " + li_ids[i]);
+     console.log("hello: " + ingredient.search(li_ids[i]));
+     if(ingredient.includes(li_ids[i])) {
+       document.getElementById(li_ids[i]).innerHTML = ingredient + ":  " + ingredient_dictionary[ingredient] + " oz";
+     }
+   }
  }
 
  // connects to stop button on html page
@@ -85,7 +86,6 @@
        display += amount_of_ing + '\n';
     }
    }
-   document.getElementById('ingredients').innerHTML = display;
    TopCodes.startStopVideoScan('video-canvas')
    // pass ingredient_dictionary to graph
    localStorage.setItem('myDrink', JSON.stringify(ingredient_dictionary))
