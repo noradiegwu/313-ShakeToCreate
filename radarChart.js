@@ -79,10 +79,17 @@ function plotDrink(ingredients){
    incr += flavors[f];
  }
 
+ var red = 16*(flavors['sweet'] + flavors['fruity']);
+ var green = 8*(flavors['citrus'] + flavors['herbal']);
+ var blue = 4*(flavors['smoky'] + flavors['bitter']);
+ var a = 1/20 * flavors['boozy'];
+
+ var color = 'rgba(' + red + ', ' + green + ', ' + blue + ', ' + a + ')';
+
  multiplier = 100/incr;
 
  Highcharts.chart('container', {
-    colors: ['#f78200', '#90ee7e'],
+    colors: [color, '#90ee7e'],
      chart: {
          polar: true,
          type: 'area',
@@ -146,7 +153,7 @@ function plotDrink(ingredients){
          name: 'Drink',
          data: [flavors.sweet * multiplier, flavors.boozy * multiplier, flavors.bitter * multiplier, flavors.citrus * multiplier, flavors.herbal * multiplier, flavors.smoky * multiplier, flavors.fruity * multiplier],
          pointPlacement: 'on',
-         fillColor: 'rgba(247, 130, 0, 0.2'
+         fillColor: color
      }]
  });
 };
@@ -241,12 +248,19 @@ function plotClassic(classic){
    incr += flavors[f];
  }
 
+ var red = 16*(flavors['sweet'] + flavors['fruity']);
+ var green = 8*(flavors['citrus'] + flavors['herbal']);
+ var blue = 4*(flavors['smoky'] + flavors['bitter']);
+ var a = 1/20 * flavors['boozy'];
+
+ var color = 'rgba(' + red + ', ' + green + ', ' + blue + ', ' + a + ')';
+
  multiplier = 100/incr;
 
  //onsole.log(classic.concat('Plot'));
 
  Highcharts.chart(classic.concat('Plot'), {
-    colors: ['#f78200', '#90ee7e'],
+    colors: [color, '#90ee7e'],
      chart: {
          polar: true,
          type: 'area',
@@ -310,7 +324,7 @@ function plotClassic(classic){
          name: 'Drink',
          data: [flavors.sweet * multiplier, flavors.boozy * multiplier, flavors.bitter * multiplier, flavors.citrus * multiplier, flavors.herbal * multiplier, flavors.smoky * multiplier, flavors.fruity * multiplier],
          pointPlacement: 'on',
-         fillColor: 'rgba(247, 130, 0, 0.2)'
+         fillColor: color
      }]
  });
 }
