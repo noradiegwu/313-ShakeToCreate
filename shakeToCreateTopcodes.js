@@ -69,10 +69,11 @@
    var li_ids = ['rye', 'sweet', 'dry vermouth', 'london', 'rum', 'lemon', 'lime', 'syrup', 'bitters']
 
    for(var i = 0; i < li_ids.length ; i++) {
-     console.log("here: " + li_ids[i]);
-     console.log("hello: " + ingredient.search(li_ids[i]));
+     // console.log("here: " + li_ids[i]);
+     // console.log("hello: " + ingredient.search(li_ids[i]));
      if(ingredient.includes(li_ids[i])) {
-       document.getElementById(li_ids[i]).innerHTML = ingredient + ":  " + ingredient_dictionary[ingredient] + " oz";
+       var ounces = (ingredient_dictionary[ingredient]+ " oz").toString().bold() ;
+       document.getElementById(li_ids[i]).innerHTML = ingredient + ":  " + ounces;
      }
    }
  }
